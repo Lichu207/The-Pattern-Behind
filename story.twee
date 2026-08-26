@@ -44,9 +44,9 @@ John enters, bringing your morning tonic. He smiles down at you warmly.
 
 What do you do?
 
-* [[Swallow the tonic meekly and lie back down.]] -> (set: $sanity to $sanity -5) (go-to: "Day1-Obey")
-* [[Beg John top let you go downstairs or visit friends.]] -> (set: $suspicion to $suspicion + 15) (go-to: "Day1-Resist")
-* [[Hide under the blankets until he leaves, then reach for your hidden journal.]] ->(set: $suspicion to $suspicion + 10) (set: $sanity to $sanity + 5) (go-to: "Day1-Write")
+* [[Swallow the tonic meekly and lie back down.->Day1-Obey]] 
+* [[Beg John top let you go downstairs or visit friends.->Day1-Resist]]
+* [[Hide under the blankets until he leaves, then reach for your hidden journal.->Day1-Write]]
 
 :: Day1-Obey
 (set: $sanity to $sanity -5)
@@ -64,7 +64,7 @@ John's smile tightens. His fingers press firmly into your shoulder as he forces 
 
 "Nonsense," he says softly. "You are weak, my dear. You do not know what is best for you."
 
-[[Wait for nightfall -> Day1-Night]]
+[[Wait for nightfall->Day1-Night]]
 
 :: Day1-Write
 (set: $suspicion to $suspicion + 10)
@@ -73,5 +73,5 @@ You slip beneath the heavy quilts, holding your breath until the door clicks shu
 
 Putting thoughts into ink relieves the pressure in your skull, if only for a moment.
 
-[[Wait for nightfall -> Day1-Night]]
+[[Wait for nightfall->Day1-Night]]
 
