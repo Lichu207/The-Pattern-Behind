@@ -47,3 +47,31 @@ What do you do?
 * [[Swallow the tonic meekly and lie back down.]] -> (set: $sanity to $sanity -5) (go-to: "Day1-Obey")
 * [[Beg John top let you go downstairs or visit friends.]] -> (set: $suspicion to $suspicion + 15) (go-to: "Day1-Resist")
 * [[Hide under the blankets until he leaves, then reach for your hidden journal.]] ->(set: $suspicion to $suspicion + 10) (set: $sanity to $sanity + 5) (go-to: "Day1-Write")
+
+:: Day1-Obey
+(set: $sanity to $sanity -5)
+You drink the tonic. The dark liquid tastes of iron and bitter herbs. John pats your head approvingly.
+
+"Good girl," he murmurs. "Rest now."
+
+[[Wait for nighfall->Day1-Night]]
+
+:: Day1-Resist
+(set: $suspicion to $suspicion + 15)
+"John, please," you plead, reaching for his sleeve. "The air downstairs is so much brighter. And I long to see cousin Henry..."
+
+John's smile tightens. His fingers press firmly into your shoulder as he forces you back onto the pillows.
+
+"Nonsense," he says softly. "You are weak, my dear. You do not know what is best for you."
+
+[[Wait for nightfall -> Day1-Night]]
+
+:: Day1-Write
+(set: $suspicion to $suspicion + 10)
+(set: $sanity to $sanity + 5)
+You slip beneath the heavy quilts, holding your breath until the door clicks shut. Hearing his footsteps fade down the stairs, you retrieve your journal from beneath the floorboard.
+
+Putting thoughts into ink relieves the pressure in your skull, if only for a moment.
+
+[[Wait for nightfall -> Day1-Night]]
+
