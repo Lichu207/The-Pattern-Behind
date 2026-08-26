@@ -31,9 +31,9 @@ He calls your condition a *"temporary nervous depression—a slight hysterical t
 * **Initial Sanity:** 100%
 * **Husband's Suspicion:** 0%
 
-[[Begin the Rest Cure->Day1_Morning]]
+[[Begin the Rest Cure->Day1-Morning]]
 
-:: Day1_Morning [day]
+:: Day1-Morning [day]
 The room John chose for us is at the very top of the house. It is a large, airy room, formerly a nursery, with heavy bars on the windows and a bed nailed to the floor.
 
 Most striking of all is the paper on the walls. It is a dull, sickly yellow, sprawling in unclean, chaotic patterns that repulse the eye.
@@ -44,6 +44,6 @@ John enters, bringing your morning tonic. He smiles down at you warmly.
 
 What do you do?
 
-* [[Swallow the tonic meekly and lie back down.]] -> (set: $sanity to $sanity -5) (go-to: "Day1_Obey")
-* [[Beg John top let you go downstairs or visit friends.]] -> (set: $suspicion to $suspicion + 15) (go-to: "Day1_Resist")
-* [[Hide under the blankets until he leaves, then reach for your hidden journal.]] ->(set: $suspicion to $suspicion + 10) (set: $sanity to $sanity + 5) (go-to: "Day1_Write")
+* [[Swallow the tonic meekly and lie back down.]] -> (set: $sanity to $sanity -5) (go-to: "Day1-Obey")
+* [[Beg John top let you go downstairs or visit friends.]] -> (set: $suspicion to $suspicion + 15) (go-to: "Day1-Resist")
+* [[Hide under the blankets until he leaves, then reach for your hidden journal.]] ->(set: $suspicion to $suspicion + 10) (set: $sanity to $sanity + 5) (go-to: "Day1-Write")
