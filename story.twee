@@ -19,7 +19,7 @@ The Pattern Behind
 (set: $day to 1)
 
 :: StatHeader [header]
-(if: $sanity <= 40)[(enchant: ?page, (css: "color: #d4b85c; animation: wobble 2.5s infinite ease-in-out;"))]
+(if: $sanity <= 40)[<script>$('tw-story').addClass('low-sanity');</script>](else:)[<script>$('tw-story').removeClass('low-sanity');</script>]
 ---
 **Day $day** | **Sanity:** $sanity% | **Husband's Suspicion:** $suspicion%
 ---
@@ -126,23 +126,25 @@ The sound wakes John slightly downstairs. You scurry back under the covers befor
 
 
 :: UserStylesheet [stylesheet]
-tw-story{
-    font-family: 'Georgia', serif;
-    background-color: #0d0d0d;
-    color: #e0e0e0;
-    transition: background-color 1s ease, color 1s ease;
+tw-story {
+  font-family: 'Georgia', serif;
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+  transition: background-color 1.5s ease, color 1.5s ease;
 }
 
-.low-sanity{
-    color: #d4b85c;
-    animation: wobble 2.5s infinite ease-in-out;
+
+tw-story.low-sanity {
+  background-color: #1a1708 !important;
+  color: #d4b85c !important;
+  animation: wobble 2.5s infinite ease-in-out;
 }
 
-@keyframe wobble {
-    0% { transform: rotate(0deg) scale(1); }
-    25% { transform: rotate(-0.5deg) scale(1.002); }
-    75% { transform: rotate(0.5deg) scale(0.998); }
-    100% { transform: rotate(0deg) scale(1); }
+@keyframes wobble {
+  0% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-0.4deg) scale(1.001); }
+  75% { transform: rotate(0.4deg) scale(0.999); }
+  100% { transform: rotate(0deg) scale(1); }
 }
 
 :: Day2-Morning [day]
