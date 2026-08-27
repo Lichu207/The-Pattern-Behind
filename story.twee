@@ -75,3 +75,22 @@ Putting thoughts into ink relieves the pressure in your skull, if only for a mom
 
 [[Wait for nightfall->Day1-Night]]
 
+:: Day1-Night [night]
+The moonlight cuts through the barred windows, casting dark shadows across the pale floor. John is asleep downstairs, his breathing steady and untroubled.
+
+The yellow wallpaper seems to change under the night light. The endless, confusing patterns take on a strange life of their own.
+
+What do you do?
+
+*[[Lie quietly in bed, closing your eyes tight.->Day1-Sleep]]
+*[[Get out of bed and trace the pattern with your fingertips.->Day-Trace]]
+*[[Creep over to the corner where the paper is already peeling.->Day1-Peel]]
+
+:: Day1-Sleep
+(set: $sanity to $sanity + 5)
+You force yourself to turn toward the wall and sleep. Dreams of twisting yellow vines haunt your rest, but your body recovers a small measure of strength.
+
+---
+**Current Sanity** $sanity% | **Husband's Suspicion:** $suspicion%
+[[Wake to Day 2->Day2-Morning]]
+
