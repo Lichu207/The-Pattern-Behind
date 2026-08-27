@@ -13,20 +13,25 @@ The Pattern Behind
     }
 }
 
-:: StoryInit
+:: StoryInit [startup]
 (set: $sanity to 100)
 (set: $suspicion to 0)
 (set: $day to 1)
 
 :: StatHeader [header]
-(if: $sanity <= 40)[
-  (enchant: ?page, (css: "background-color: #1a1708; color: #d4b85c; animation: wobble 2.5s infinite ease-in-out;"))
-]
+(if: $sanity <= 20)[<div class="sanity-stage4"></div>]
+(else-if: $sanity <= 45)[<div class="sanity-stage3"></div>]
+(else-if: $sanity <= 55)[<div class="sanity-stage2"></div>]
+(else-if: $sanity <= 70)[<div class="sanity-stage1"></div>]
+
 ---
 **Day $day** | **Sanity:** $sanity% | **Husband's Suspicion:** $suspicion%
 ---
 
 :: Title-Screen
+(set: $sanity to 100)
+(set: $suspicion to 0)
+(set: $day to 1)
 # The Pattern Behind
 ### An Interactive Exploration of Gilman's "The Yellow Wallpaper"
 
@@ -135,11 +140,56 @@ tw-story {
   transition: background-color 1.5s ease, color 1.5s ease;
 }
 
+tw-story:has(.sanity-stage1) {
+  background-color: #1a1708 !important;
+  color: #d4b85c !important;
+}
+
+tw-story:has(.sanity-stage2) {
+  background-color: #1a1708 !important;
+  color: #d4b85c !important;
+  animation: wobble 2.5s infinite ease-in-out;
+}
+
+tw-story:has(.sanity-stage3) {
+  background-color: #1a1708 !important;
+  color: #d4b85c !important;
+  animation: wobble 2.5s infinite ease-in-out;
+}
+tw-story:has(.sanity-stage3) tw-passage {
+  animation: textFlicker 3s infinite ease-in-out;
+}
+
+tw-story:has(.sanity-stage4) {
+  background-color: #211d00 !important;
+  color: #f5d466 !important;
+  animation: controlled-tremble 0.9s infinite ease-in-out;
+}
+tw-story:has(.sanity-stage4) tw-passage {
+  animation: textFlicker 1.8s infinite ease-in-out;
+}
+
 @keyframes wobble {
   0% { transform: rotate(0deg) scale(1); }
   25% { transform: rotate(-0.4deg) scale(1.001); }
   75% { transform: rotate(0.4deg) scale(0.999); }
   100% { transform: rotate(0deg) scale(1); }
+}
+
+@keyframes textFlicker {
+  0%, 100% { opacity: 1; filter: blur(0px); }
+  50% { opacity: 0.85; filter: blur(0.5px); }
+  52% { opacity: 1; filter: blur(0px); }
+  80% { opacity: 0.75; filter: blur(0.8px); }
+  82% { opacity: 1; filter: blur(0px); }
+}
+
+@keyframes controlled-tremble {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-0.8px, 0.8px) rotate(-0.3deg); }
+  50% { transform: translate(0.8px, -0.8px) rotate(0.3deg); }
+  75% { transform: translate(-0.8px, -0.4px) rotate(0.1deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
 }
 
 :: Day2-Morning [day]
