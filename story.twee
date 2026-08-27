@@ -20,7 +20,7 @@ The Pattern Behind
 
 :: StatHeader [header]
 (if: $sanity <= 40)[
-  (enchant: ?page, (css: "background-color: #1a1708", "color: #d4b85c", "animation: wobble 2.5s infinite ease-in-out"))
+  (enchant: ?page, (css: "background-color: #1a1708; color: #d4b85c; animation: wobble 2.5s infinite ease-in-out;"))
 ]
 ---
 **Day $day** | **Sanity:** $sanity% | **Husband's Suspicion:** $suspicion%
