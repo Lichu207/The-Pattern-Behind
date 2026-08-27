@@ -6,7 +6,7 @@ The Pattern Behind
     "ifid": "45AEC3B5-9BAF-4887-85B7-EB65CEF2AFEE",
     "format": "Harlowe",
     "format-version": "3.3.8",
-    "start": "Title_Screen",
+    "start": "Title-Screen",
     "tag-colors": {
         "day": "yellow",
         "night": "blue"
@@ -24,7 +24,7 @@ The Pattern Behind
 **Day $day** | **Sanity:** $sanity% | **Husband's Suspicion:** $suspicion%
 ---
 
-:: Title_Screen
+:: Title-Screen
 # The Pattern Behind
 ### An Interactive Exploration of Gilman's "The Yellow Wallpaper"
 
@@ -356,7 +356,7 @@ Every time you creep round the room, you have to creep right over him.
 
 *You have achieved complete psychological liberation from the Rest Cure, though at the cost of your sanity.*
 
-[[Play Again?->Title_Screen]]
+[[Play Again?->Title-Screen]]
 
 :: Ending-Institutionalized
 # ENDING B: "Locked Away"
@@ -371,7 +371,7 @@ You are carried downstairs and put into a carriage. You are taken to Dr. Weir Mi
 
 *Your overt resistance triggered John's ultimate medical control.*
 
-[[Play Again?->Title_Screen]]
+[[Play Again?->Title-Screen]]
 
 :: Ending-Subdued
 # ENDING C: "The Quiet Patient"
@@ -386,4 +386,4 @@ You lie in his arms, staring past his shoulder at the torn yellow scraps on the 
 
 *You remained obedient enough to stay trapped under John's care forever.*
 
-[[Play Again?->Title_Screen]]
+[[Play Again?->Title-Screen]]
