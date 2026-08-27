@@ -88,9 +88,56 @@ What do you do?
 
 :: Day1-Sleep
 (set: $sanity to $sanity + 5)
+
 You force yourself to turn toward the wall and sleep. Dreams of twisting yellow vines haunt your rest, but your body recovers a small measure of strength.
 
 ---
 **Current Sanity** $sanity% | **Husband's Suspicion:** $suspicion%
+
 [[Wake to Day 2->Day2-Morning]]
 
+:: Day1-Trace
+(set: $sanity to $sanity - 10)
+The paper is coarse, swollen, and stripped of grace. As your index finger follows a bulbous curve, you feel a faint, rhythmic pulsing beneath the plaster.
+
+You pull your hand back, heart hammering. *Is it moving?*
+
+---
+**Current Sanity:** $sanity% | **Husband's Suspicion:** $suspicion%
+
+[[Wake to Day 2->Day2-Morning]]
+
+:: Day1-Peel
+(set: $sanity to $sanity - 15)
+(set: $suspicion to $suspicion + 5)
+You sink your fingernails under a loose seam and tug. A long strip tears away with a dry, screeching sound. 
+
+Beneath the outer layer, you catch a glimpse of a sub-pattern—a faint shadow like a woman stooping down and creeping behind the bars.
+
+The sound wakes John slightly downstairs. You scurry back under the covers before he checks on you.
+
+---
+**Current Sanity:** $sanity% | **Husband's Suspicion:** $suspicion%
+
+[[Wake to Day 2->Day2-Morning]]
+
+
+:: UserStylesheet [stylesheet]
+tw-story{
+    font-family: 'Georgia', serif;
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+    transition: background-color 1s ease, color 1s ease;
+}
+
+.low-sanity{
+    color: #d4b85c;
+    animation: wobble 2.5s infinite ease-in-out;
+}
+
+@keyframe wobble {
+    0% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(-0.5deg) scale(1.002); }
+    75% { transform: rotate(0.5deg) scale(0.998); }
+    100% { transform: rotate(0deg) scale(1); }
+}
