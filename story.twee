@@ -18,6 +18,12 @@ The Pattern Behind
 (set: $suspicion to 0)
 (set: $day to 1)
 
+:: StatHeader [header]
+(if: $sanity <= 40)[(enchant: ?page, (css: "color: #d4b85c; animation: wobble 2.5s infinite ease-in-out;"))]
+---
+**Day $day** | **Sanity:** $sanity% | **Husband's Suspicion:** $suspicion%
+---
+
 :: Title_Screen
 # The Pattern Behind
 ### An Interactive Exploration of Gilman's "The Yellow Wallpaper"
@@ -141,3 +147,74 @@ tw-story{
     75% { transform: rotate(0.5deg) scale(0.998); }
     100% { transform: rotate(0deg) scale(1); }
 }
+
+:: Day2-Morning [day]
+(set: $day to 2)
+You awake to the smell of yellow paper and damp earth. Jennie, John's sister, is tidying the washstand. She glides about the room like a quiet ghost, fulfilling her duties as housekeeper.
+
+She catches you staring at the walls. 
+
+"John says you slept poorly last night," Jennie says softly, setting down a cup of warm broth. "He wants you to stay in bed until noon."
+
+What do you do?
+
+* [[Drink the broth and lie still, obeying John's orders.->Day2-Obey]]
+* [[Ask Jennie what she thinks about the strange wallpaper.->Day2-Jennie]]
+* [[Wait until Jennie turns her back, then secretly write in your journal.->Day2-Write]]
+
+:: Day2-Obey
+(set: $sanity to $sanity - 5)
+You drink the broth and stare at the ceiling. Hours slip away into heavy, dull silence. Your mind feels clouded, numb, and caged.
+
+[[Wait for nightfall->Day2-Night]]
+
+:: Day2-Jennie
+(set: $suspicion to $suspicion + 10)
+"Jennie," you whisper, "does the paper not seem... strange to you? The way the pattern twists?"
+
+Jennie stops. She touches a torn edge of the paper gently. "I found yellow stains on your hands and clothes this morning," she says, looking at you with quiet concern. "John must not hear of this."
+
+[[Wait for nightfall->Day2-Night]]
+
+:: Day2-Write
+(set: $suspicion to $suspicion + 15)
+(set: $sanity to $sanity + 5)
+You scribble frantically while Jennie sweeps the hallway. *The paper has a yellow smell,* you write. *It creeps all over the house.*
+
+You hear footsteps on the stairs and hide the paper just before John enters to check your pulse.
+
+[[Wait for nightfall->Day2-Night]]
+
+:: Day2-Night [night]
+Night returns. The moon shines full through the iron bars of the nursery window.
+
+The wallpaper pattern is unmistakable now. Behind the outer shapes, a faint figure is definitely moving—a woman, stooping low and creeping behind the pattern.
+
+What do you do?
+
+* [[Try to sleep and ignore the creeping shape.->Day2-Sleep]]
+* [[Talk to the woman behind the wallpaper.->Day2-Talk]]
+* [[Help her by tearing away more of the outer pattern.->Day2-PeelMore]]
+
+:: Day2-Sleep
+(set: $sanity to $sanity + 5)
+You pull the blanket over your head to block out the pattern, praying for morning to come quickly.
+
+[[Wake to Day 3->Day3-Morning]]
+
+:: Day2-Talk
+(set: $sanity to $sanity - 15)
+"I see you," you whisper against the wall. "Are you trapped here too?"
+
+The paper remains silent, but a soft, rustling sound echoes from behind the plaster, as if someone is shaking the bars.
+
+[[Wake to Day 3->Day3-Morning]]
+
+:: Day2-PeelMore
+(set: $sanity to $sanity - 20)
+(set: $suspicion to $suspicion + 10)
+You claw at the paper with your bare fingers, tearing off long, jagged strips. The sub-pattern becomes clearer—the trapped woman is trying to break free.
+
+You tear so much paper that your nails bleed slightly before exhaustion forces you to stop.
+
+[[Wake to Day 3->Day3-Morning]]
