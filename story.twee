@@ -89,7 +89,7 @@ The yellow wallpaper seems to change under the night light. The endless, confusi
 What do you do?
 
 *[[Lie quietly in bed, closing your eyes tight.->Day1-Sleep]]
-*[[Get out of bed and trace the pattern with your fingertips.->Day-Trace]]
+*[[Get out of bed and trace the pattern with your fingertips.->Day1-Trace]]
 *[[Creep over to the corner where the paper is already peeling.->Day1-Peel]]
 
 :: Day1-Sleep
@@ -97,8 +97,7 @@ What do you do?
 
 You force yourself to turn toward the wall and sleep. Dreams of twisting yellow vines haunt your rest, but your body recovers a small measure of strength.
 
----
-**Current Sanity** $sanity% | **Husband's Suspicion:** $suspicion%
+
 
 [[Wake to Day 2->Day2-Morning]]
 
@@ -108,8 +107,7 @@ The paper is coarse, swollen, and stripped of grace. As your index finger follow
 
 You pull your hand back, heart hammering. *Is it moving?*
 
----
-**Current Sanity:** $sanity% | **Husband's Suspicion:** $suspicion%
+
 
 [[Wake to Day 2->Day2-Morning]]
 
@@ -122,8 +120,7 @@ Beneath the outer layer, you catch a glimpse of a sub-pattern—a faint shadow l
 
 The sound wakes John slightly downstairs. You scurry back under the covers before he checks on you.
 
----
-**Current Sanity:** $sanity% | **Husband's Suspicion:** $suspicion%
+
 
 [[Wake to Day 2->Day2-Morning]]
 
@@ -218,3 +215,175 @@ You claw at the paper with your bare fingers, tearing off long, jagged strips. T
 You tear so much paper that your nails bleed slightly before exhaustion forces you to stop.
 
 [[Wake to Day 3->Day3-Morning]]
+
+:: Day3-Morning [day]
+(set: $day to 3)
+The yellow scent now fills the room. It is a peculiar, heavy smell that hangs in the air, clinging to your clothes and hair. 
+
+John notices you standing near the torn strips of wallpaper. He checks your pulse, his brow furrowed in disapproval.
+
+"My darling," he says, taking your hands, "you are letting your fancy run away with you. You must use your willpower to control these absurd ideas."
+
+What do you do?
+
+* [[Nod and promise to try harder for his sake.->Day3-Obey]]
+* [[Confront John about the bars on the windows and the nailed bed.->Day3-Confront]]
+(if: $suspicion < 40)[* [[Discreetly inspect the paper behind John's back while he writes notes.->Day3-Inspect]] ]
+
+:: Day3-Obey
+(set: $sanity to $sanity - 10)
+You bow your head. Obeying him requires smothering every thought, every impulse, until your mind feels completely hollowed out.
+
+[[Wait for nightfall->Day3-Night]]
+
+:: Day3-Confront
+(set: $suspicion to $suspicion + 20)
+(set: $sanity to $sanity - 5)
+"Why are there bars on these windows, John?" you demand. "Why is this room built like a prison cell?"
+
+John's face hardens. "It was a nursery, my dear. Do not work yourself into a state. I am increasing your dosage."
+
+[[Wait for nightfall->Day3-Night]]
+
+:: Day3-Inspect
+(set: $sanity to $sanity - 15)
+(set: $suspicion to $suspicion + 10)
+While John's back is turned, you examine the wall closely. You realize the pattern does not stay still—the shadow behind it shakes the front pattern as if trying to break free.
+
+[[Wait for nightfall->Day3-Night]]
+
+:: Day3-Night [night]
+At night, the room transforms completely. Moonlight reveals the woman behind the pattern clearly now. She is creeping on all fours, pushing against the yellow bars of the paper.
+
+She wants to get out. 
+
+What do you do?
+
+* [[Watch her silently, creeping across the floor in unison with her.->Day3-Creep]]
+* [[Lock the room door so John cannot interrupt her escape.->Day3-LockDoor]]
+* [[Tear off a huge section of paper to help her get out faster.->Day3-TearPaper]]
+
+:: Day3-Creep
+(set: $sanity to $sanity - 20)
+You get down on your hands and knees. You creep along the baseboard, moving round and round the room just as she creeps behind the wall.
+
+[[Wake to Day 4->Day4-Morning]]
+
+:: Day3-LockDoor
+(set: $suspicion to $suspicion + 15)
+You slide the key in the heavy lock. Outside, you hear John's footsteps on the stairs, but he finds the door locked. He knocks firmly. "My dear? Open the door."
+
+You stay silent, listening to the woman in the wall.
+
+[[Wake to Day 4->Day4-Morning]]
+
+:: Day3-TearPaper
+(set: $sanity to $sanity - 25)
+(set: $suspicion to $suspicion + 10)
+You strip away yard after yard of the paper. It peels off in long, yellow ribbons. By midnight, half the wall is stripped bare.
+
+[[Wake to Day 4->Day4-Morning]]
+
+:: Day4-Morning [day]
+(set: $day to 4)
+It is the final day before John intends to take you back to the city. The room is in total disarray; yellow paper hangs in shredded banners from the plaster.
+
+John and Jennie are deeply alarmed by your behavior. 
+
+John stands outside the locked nursery door, knocking urgently. "Open this door at once, darling! What are you doing in there?"
+
+What do you do?
+
+* [[Throw the key out the window into the front yard.->Day4-ThrowKey]]
+* [[Tie the strong rope you hid around your waist.->Day4-Rope]]
+(if: $sanity <= 30)[* [[Realize that YOU are the woman trapped behind the wallpaper.->Day4-Realization]] ]
+
+:: Day4-ThrowKey
+(set: $suspicion to $suspicion + 20)
+You hurl the heavy iron key out the barred window. It lands somewhere near the front steps in the grass.
+
+"The key is gone!" you call out. "You will have to get an axe if you wish to enter!"
+
+[[Prepare for the climax->Day5-Climax]]
+
+:: Day4-Rope
+(set: $sanity to $sanity - 15)
+(set: $suspicion to $suspicion + 10)
+You take the heavy rope you found and fasten it tightly around your waist. If the woman tries to get away or creep outside, you will bind her to you so she cannot escape.
+
+[[Prepare for the climax->Day5-Climax]]
+
+:: Day4-Realization
+(set: $sanity to 0)
+The truth strikes you with blinding clarity. There were never two women. *You* were the one trapped behind the wallpaper all along. Now that the paper is torn down, you are free.
+
+[[Prepare for the climax->Day5-Climax]]
+
+:: Day5-Climax [night]
+(set: $day to 5)
+Outside, you hear John hammering at the lock, demanding entry. Inside, the wall is completely stripped, and you are creeping smoothly along the floor, fitting your shoulder into the worn groove along the wall.
+
+Finally, the door is broken open. John steps into the room and stops dead in his tracks.
+
+He stares at you in absolute horror.
+
+"What are you doing?" he cries out.
+
+You do not stop creeping. You look up at him over your shoulder.
+
+"I've got out at last," you say softly, "in spite of you and Jennie. And I've pulled off most of the paper, so you can't put me back!"
+
+(if: $sanity <= 20)[
+  [[See how your story ends...->Ending-Free]]
+](else-if: $suspicion >= 50)[
+  [[See how your story ends...->Ending-Institutionalized]]
+](else:)[
+  [[See how your story ends...->Ending-Subdued]]
+]
+
+:: Ending-Free
+# ENDING A: "I've Got Out At Last"
+*(Canonical / High Madness Ending)*
+
+John faints dead away across your path right by the wall, falling flat across your body's trajectory.
+
+You do not stop. 
+
+Every time you creep round the room, you have to creep right over him.
+
+---
+**Final Stats:** Sanity: $sanity% | Husband's Suspicion: $suspicion%
+
+*You have achieved complete psychological liberation from the Rest Cure, though at the cost of your sanity.*
+
+[[Play Again?->Title_Screen]]
+
+:: Ending-Institutionalized
+# ENDING B: "Locked Away"
+*(High Suspicion Ending)*
+
+John calls for Jennie and the servants. Seeing the key thrown out the window and the ruined room, he realizes you have completely defied his medical authority.
+
+You are carried downstairs and put into a carriage. You are taken to Dr. Weir Mitchell's asylum, locked in a room where even the walls are blank.
+
+---
+**Final Stats:** Sanity: $sanity% | Husband's Suspicion: $suspicion%
+
+*Your overt resistance triggered John's ultimate medical control.*
+
+[[Play Again?->Title_Screen]]
+
+:: Ending-Subdued
+# ENDING C: "The Quiet Patient"
+*(High Sanity / Low Suspicion Ending)*
+
+John rushes to your side, weeping, and scoops you up into his arms. He blames your medication and vows to nurse you back to health himself under even stricter supervision.
+
+You lie in his arms, staring past his shoulder at the torn yellow scraps on the floor, knowing you will never be allowed near a pencil again.
+
+---
+**Final Stats:** Sanity: $sanity% | Husband's Suspicion: $suspicion%
+
+*You remained obedient enough to stay trapped under John's care forever.*
+
+[[Play Again?->Title_Screen]]
