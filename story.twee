@@ -19,7 +19,9 @@ The Pattern Behind
 (set: $day to 1)
 
 :: StatHeader [header]
-(if: $sanity <= 40)[<script>$('tw-story').addClass('low-sanity');</script>](else:)[<script>$('tw-story').removeClass('low-sanity');</script>]
+(if: $sanity <= 40)[
+  (enchant: ?page, (css: "background-color: #1a1708", "color: #d4b85c", "animation: wobble 2.5s infinite ease-in-out"))
+]
 ---
 **Day $day** | **Sanity:** $sanity% | **Husband's Suspicion:** $suspicion%
 ---
@@ -131,13 +133,6 @@ tw-story {
   background-color: #0d0d0d;
   color: #e0e0e0;
   transition: background-color 1.5s ease, color 1.5s ease;
-}
-
-
-tw-story.low-sanity {
-  background-color: #1a1708 !important;
-  color: #d4b85c !important;
-  animation: wobble 2.5s infinite ease-in-out;
 }
 
 @keyframes wobble {
